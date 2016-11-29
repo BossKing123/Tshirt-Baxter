@@ -42,6 +42,20 @@ public class aim extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
+    	if(Robot.aimer.rLimitState || Robot.aimer.lLimitState){
+    		Robot.aimer.stop();
+    	}
+    	else{
+    		if(Robot.aimer.topHat > 0){
+    			Robot.aimer.moveUp();
+    		}
+    		if(Robot.aimer.topHat < 0){
+    			Robot.aimer.moveDown();
+    		}
+    		else{
+    			Robot.aimer.stop();
+    		}
+    	}
     }
 
     // Make this return true when this Command no longer needs to run execute()
