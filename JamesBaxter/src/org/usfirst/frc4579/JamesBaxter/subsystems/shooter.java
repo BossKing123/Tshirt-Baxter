@@ -15,7 +15,7 @@ import org.usfirst.frc4579.JamesBaxter.Robot;
 import org.usfirst.frc4579.JamesBaxter.RobotMap;
 import org.usfirst.frc4579.JamesBaxter.commands.*;
 import edu.wpi.first.wpilibj.Relay;
-
+import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.command.Subsystem;
 
 
@@ -46,15 +46,20 @@ public class shooter extends Subsystem {
     }
     
     public void shoot(){
+    	shootSole.set(Relay.Value.kOn);
     	if (Robot.shooter.setting == 1){
-    		
+    		Timer.delay(3);
     	}
     	if (Robot.shooter.setting == 2){
-    		
+    		Timer.delay(5);
     	}
     	if (Robot.shooter.setting == 3){
-    		
+    		Timer.delay(9);
     	}
+    }
+    
+    public void close(){
+    	shootSole.set(Relay.Value.kOff);
     }
     
     public void initDefaultCommand() {
