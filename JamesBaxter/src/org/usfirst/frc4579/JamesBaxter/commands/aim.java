@@ -46,15 +46,7 @@ public class aim extends Command {
     		Robot.aimer.stop();
     	}
     	else{
-    		if(Robot.aimer.topHat > 0){
-    			Robot.aimer.moveUp();
-    		}
-    		if(Robot.aimer.topHat < 0){
-    			Robot.aimer.moveDown();
-    		}
-    		else{
-    			Robot.aimer.stop();
-    		}
+    		Robot.aimer.move();
     	}
     }
 

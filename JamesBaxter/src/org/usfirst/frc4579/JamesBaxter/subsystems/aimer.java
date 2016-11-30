@@ -45,16 +45,12 @@ public class aimer extends Subsystem {
     
     // Put methods for controlling this subsystem
     // here. Call these from Commands.
-    public void moveUp(){
-    	Robot.aimer.liftMotor.set(.25);
-    }
-    
-    public void moveDown(){
-    	Robot.aimer.liftMotor.set(-.25);
+    public void move(){
+    	liftMotor.set((Robot.oi.joystick.getRawAxis(6)) / 4);
     }
     
     public void stop(){
-    	Robot.aimer.liftMotor.set(0);
+    	liftMotor.set(0);
     }
     
     public void initDefaultCommand() {
