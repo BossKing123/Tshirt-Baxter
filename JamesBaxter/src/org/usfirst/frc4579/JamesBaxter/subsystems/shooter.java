@@ -36,6 +36,8 @@ public class shooter extends Subsystem {
 
     // Put methods for controlling this subsystem
     // here. Call these from Commands.
+    
+    // Setting the toggle value
     public void toggle(){
     	if (setting < 3){
     		setting++;
@@ -45,6 +47,7 @@ public class shooter extends Subsystem {
     	}
     }
     
+    // Shoot command based on the toggle value
     public void shoot(){
     	shootSole.set(Relay.Value.kOn);
     	if (Robot.shooter.setting == 1){
@@ -58,6 +61,7 @@ public class shooter extends Subsystem {
     	}
     }
     
+    // Closing valve
     public void close(){
     	shootSole.set(Relay.Value.kOff);
     }

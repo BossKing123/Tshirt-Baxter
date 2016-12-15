@@ -44,11 +44,17 @@ public class aim extends Command {
     protected void execute() {
     	if(Robot.aimer.rLimitState || Robot.aimer.lLimitState){
     		Robot.aimer.stop();
+    		System.out.println("You can't go any further");
     	}
     	else{
+    		if ( Robot.aimer.checkTophat()){
+    			System.out.println("Invalid input from tophat");
+    		}
+    		else{
     		Robot.aimer.move();
+    		}
     	}
-    }
+	}
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
